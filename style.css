@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* https://developer.mozilla.org/es/docs/Web/CSS/box-sizing */
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('./assets/ttf/Lato-Regular.ttf');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('./assets/ttf/Lato-Bold.ttf');
+    font-weight: bold;
+}
+
+body {
+    font-family: 'Lato';
+    background-color: #eee;
+}
+
+/* GLOBAL */
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+p {
+    line-height: 1.5;
+}
+
+/* ENCABEZADO */
+.header {
+    background-color: #0f172a;
+    padding: 30px 20px;
+}
+
+.header__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__container h3 a {
+    color: #22c55e;
+}
+
+.header__container-navbar {
+    display: none;
+}
+
+/* HERO */
+.hero {
+    background-color: #14532d;
+    padding: 60px 20px;
+    color: #e2e8f0;
+}
+
+.hero__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+}
+
+.hero__container-info h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.hero__container-info p {
+    margin-bottom: 40px;
+}
+
+.hero__container-info a {
+    color: #e2e8f0;
+    border-radius: 10px;
+    background-color: #0f172a;
+    font-weight: bold;
+    padding: 15px 30px;
+}
+
+.hero__container-video {
+    width: 100%;
+    border-radius: 10px;
+    /* https://developer.mozilla.org/es/docs/Web/CSS/box-shadow */
+    /* eje x (horizontal), eje y (vertical), difuminacion, tamaño de sombra (+ crece, - disminuye), color */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+}
+
+/* TARJETAS */
+.courses {
+    margin-top: 60px;
+    padding: 0 20px;
+}
+
+.courses__title {
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.courses__cards {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+}
+
+.card__header img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    /* https://developer.mozilla.org/es/docs/web/css/object-fit */
+    object-fit: cover;
+}
+
+.card__title {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.card__description {
+    margin-bottom: 40px;
+}
+
+.card__link {
+    background-color: #22c55e;
+    color: #fff;
+    font-weight: bold;
+    padding: 15px 0;
+    border-radius: 10px;
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+/* MEDIA QUERIES */
+/* estrategia "mobile first": breakpoints ordenados de manor a mayor */
+@media (min-width: 768px) {
+    .header__container-navbar {
+        display: flex;
+    }
+
+    .header__container-navbar li {
+        margin: 0 15px;
+    }
+    
+    .header__container-navbar li a {
+        color: #e2e8f0;
+        font-weight: bold;
+    }
+
+    .header__container-navbar-mobile {
+        display: none;
+    }
+
+    .courses__cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .hero__container {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+    }
+
+    .courses__cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
