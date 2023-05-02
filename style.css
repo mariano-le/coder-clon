@@ -53,6 +53,13 @@ p {
     color: #22c55e;
 }
 
+.header__container h3 a:hover::after {
+    content: 'inicio';
+    font-size: 14px;
+    margin-left: 5px;
+    color: #e2e8f0;
+}
+
 .header__container-navbar {
     display: none;
 }
@@ -157,15 +164,28 @@ p {
 @media (min-width: 768px) {
     .header__container-navbar {
         display: flex;
+        align-items: center;
     }
 
     .header__container-navbar li {
         margin: 0 15px;
     }
     
+    .header__container-navbar li:last-child {
+        border: 1px solid #22c55e;
+        padding: 10px;
+        border-radius: 10px;
+        margin-left: 0;
+
+    }
+    
     .header__container-navbar li a {
         color: #e2e8f0;
         font-weight: bold;
+    }
+
+    .header__container-navbar li a:hover {
+        color: #14532d;
     }
 
     .header__container-navbar-mobile {
